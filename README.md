@@ -36,6 +36,17 @@ chmod +x Q1_sonarqube_scan.sh
 > your own SonarQube instance before running Part 5. Never commit a
 > real token to a public repo.
 
+## Diagram
+
+```mermaid
+flowchart TD
+    A[Deploy SonarQube<br/>Docker · port 9000] --> B[Clone DVPWA<br/>vulnerable Python app]
+    B --> C[Create project + token<br/>SonarQube dashboard]
+    C --> D[Set up SonarScanner<br/>install CLI]
+    D --> E[Run the scan<br/>sonar-scanner]
+    E --> F[Review results<br/>bugs, vulnerabilities, code smells]
+```
+
 ## Tools
 
 - SonarQube (Community Edition, via Docker)
